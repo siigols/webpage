@@ -16,12 +16,24 @@ export function useScrollReveal(options?: {
       return;
     }
 
+    let firstCallback = true;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.setAttribute("data-visible", "true");
+          if (firstCallback) {
+            // Elements already in the viewport on mount: delay reveal so the
+            // browser paints the opacity:0 state first, making the animation
+            // visible to the user.
+            requestAnimationFrame(() => {
+              el.setAttribute("data-visible", "true");
+            });
+          } else {
+            el.setAttribute("data-visible", "true");
+          }
           observer.unobserve(el);
         }
+        firstCallback = false;
       },
       {
         threshold: options?.threshold ?? 0.15,
