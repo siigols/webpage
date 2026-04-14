@@ -13,7 +13,9 @@ export function EducationSection() {
     date: item.date,
     title: item.title[language],
     subtitle: item.subtitle[language],
-    description: item.description ? <p>{item.description[language]}</p> : undefined,
+    description: item.description ? (
+      <p>{item.description[language]}</p>
+    ) : undefined,
   }));
 
   return (

@@ -13,7 +13,9 @@ export function VolunteerSection() {
     date: item.date.replace("{{present}}", tr.common.present),
     title: item.title[language],
     subtitle: item.subtitle,
-    description: item.description ? <p>{item.description[language]}</p> : undefined,
+    description: item.description ? (
+      <p>{item.description[language]}</p>
+    ) : undefined,
   }));
 
   return (

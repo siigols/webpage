@@ -7,19 +7,18 @@ import { ProjectsSection } from "../sections/ProjectsSection";
 import { SettingsBar } from "../sections/SettingsBar";
 import { SkillsSection } from "../sections/SkillsSection";
 import { VolunteerSection } from "../sections/VolunteerSection";
-
 export function LandingPage() {
   return (
     <>
       <SettingsBar />
       <HeaderSection />
-      <ProjectsSection />
       <ExperienceSection />
       <EducationSection />
-      <SkillsSection />
+      <ProjectsSection />
+      <VolunteerSection />
       <HobbiesSection />
       <AwardsSection />
-      <VolunteerSection />
+      <SkillsSection />
     </>
   );
 }

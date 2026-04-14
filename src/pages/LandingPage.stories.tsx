@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { PrimeReactProvider } from 'primereact/api';
-import { LandingPage } from './LandingPage';
-import { ThemeProvider } from '../ThemeProvider';
-import { LanguageProvider } from '../LanguageProvider';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { PrimeReactProvider } from "primereact/api";
+import { LanguageProvider } from "../LanguageProvider";
+import { ThemeProvider } from "../ThemeProvider";
+import { LandingPage } from "./LandingPage";
 
 const meta = {
-  title: 'Pages/LandingPage',
+  title: "Pages/LandingPage",
   component: LandingPage,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
   decorators: [
     (Story) => (

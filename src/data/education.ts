@@ -19,7 +19,10 @@ export const education: EducationData[] = [
   },
   {
     date: "2012 – 2015",
-    title: { en: "Upper Secondary — IT & Media", no: "Videregående — IT og medieproduksjon" },
+    title: {
+      en: "Upper Secondary — IT & Media",
+      no: "Videregående — IT og medieproduksjon",
+    },
     subtitle: { en: "Bergen Cathedral School", no: "Bergen Katedralskole" },
   },
 ];

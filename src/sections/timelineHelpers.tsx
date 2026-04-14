@@ -25,16 +25,16 @@ export const timelineContent = (item: TimelineEvent) => (
 
 /** Structural flex classes needed because PrimeReactProvider unstyled:true strips all built-in CSS. */
 export const timelinePt = {
-  root: { className: 'flex flex-col' },
+  root: { className: "flex flex-col" },
   event: (options: { context: { index: number } }) => ({
-    className: `flex min-h-[70px] last:min-h-0 ${options.context.index % 2 === 1 ? 'flex-row-reverse' : ''}`,
+    className: `flex min-h-[70px] last:min-h-0 ${options.context.index % 2 === 1 ? "flex-row-reverse" : ""}`,
   }),
   opposite: (options: { context: { index: number } }) => ({
-    className: `flex-1 px-4 ${options.context.index % 2 === 1 ? 'text-left' : 'text-right'}`,
+    className: `flex-1 px-4 ${options.context.index % 2 === 1 ? "text-left" : "text-right"}`,
   }),
-  separator: { className: 'flex flex-col items-center flex-none' },
-  connector: { className: 'grow w-0.5 bg-[var(--accent-border)]' },
+  separator: { className: "flex flex-col items-center flex-none" },
+  connector: { className: "grow w-0.5 bg-[var(--accent-border)]" },
   content: (options: { context: { index: number } }) => ({
-    className: `flex-1 pb-6 px-4 ${options.context.index % 2 === 1 ? 'text-right' : 'text-left'}`,
+    className: `flex-1 pb-6 px-4 ${options.context.index % 2 === 1 ? "text-right" : "text-left"}`,
   }),
 };

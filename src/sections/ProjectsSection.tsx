@@ -1,4 +1,4 @@
-import { Badge, Card, Section } from "../components";
+import { Badge, Card, Section, Spacer } from "../components";
 import { projects, projectsDescription } from "../data/projects";
 import { t } from "../i18n";
 import { useLanguage } from "../useLanguage";
@@ -12,6 +12,7 @@ export function ProjectsSection() {
       title={tr.sections.projects}
       description={projectsDescription[language]}
     >
+      <Spacer />
       <div className="grid gap-4 text-left md:grid-cols-2">
         {projects.map((project) => (
           <Card key={project.title.en} href={project.href}>

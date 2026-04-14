@@ -1,11 +1,11 @@
-export type { Translations } from './types';
-export { en } from './en';
-export { no } from './no';
+export { en } from "./en";
+export { no } from "./no";
+export type { Translations } from "./types";
 
-import { en } from './en';
-import { no } from './no';
-import type { Translations } from './types';
-import type { Language } from '../contexts';
+import type { Language } from "../contexts";
+import { en } from "./en";
+import { no } from "./no";
+import type { Translations } from "./types";
 
 const translations: Record<Language, Translations> = { en, no };
 

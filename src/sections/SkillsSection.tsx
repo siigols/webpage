@@ -1,5 +1,5 @@
-import { Badge, Section } from "../components";
-import { skills, skillsDescription } from "../data/skills";
+import { Badge, Section, Spacer } from "../components";
+import { skills } from "../data/skills";
 import { t } from "../i18n";
 import { useLanguage } from "../useLanguage";
 
@@ -8,10 +8,8 @@ export function SkillsSection() {
   const tr = t(language);
 
   return (
-    <Section
-      title={tr.sections.skills}
-      description={skillsDescription[language]}
-    >
+    <Section title={tr.sections.skills}>
+      <Spacer />
       <div className="flex flex-wrap gap-2 text-left">
         {skills.map((skill) => (
           <Badge key={skill} variant="default">
