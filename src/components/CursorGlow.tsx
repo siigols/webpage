@@ -21,13 +21,13 @@ export function CursorGlow() {
     function handleMouseMove(e: MouseEvent) {
       el!.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
       if (!visible) {
-        el!.style.opacity = "0.15";
+        el!.classList.add("cursor-glow-visible");
         visible = true;
       }
     }
 
     function handleMouseLeave() {
-      el!.style.opacity = "0";
+      el!.classList.remove("cursor-glow-visible");
       visible = false;
     }
 
@@ -42,24 +42,7 @@ export function CursorGlow() {
   return (
     <div
       ref={glowRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "600px",
-        height: "600px",
-        marginLeft: "-300px",
-        marginTop: "-300px",
-        borderRadius: "50%",
-        background:
-          "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
-        opacity: 0,
-        pointerEvents: "none",
-        zIndex: 0,
-        filter: "blur(80px)",
-        willChange: "transform",
-        transition: "opacity 0.4s ease",
-      }}
+      className="cursor-glow"
       aria-hidden="true"
     />
   );
