@@ -14,7 +14,7 @@ export interface TimelineItemProps extends React.ComponentProps<'div'> {
 export function Timeline({ children, className, ...rest }: TimelineProps) {
   return (
     <div
-      className={`relative border-l-2 border-[var(--accent-border)] pl-6 md:pl-8 ${className ?? ''}`}
+      className={`relative ml-1 border-l-2 border-[var(--accent-border)] pl-6 md:pl-8 ${className ?? ''}`}
       {...rest}
     >
       {children}
@@ -35,14 +35,14 @@ export function TimelineItem({
       className={`relative pb-8 last:pb-0 ${className ?? ''}`}
       {...rest}
     >
-      {/* Dot on the timeline */}
+      {/* Dot centered on the timeline border */}
       <span
-        className="absolute -left-[29px] top-1.5 h-2 w-2 rounded-full bg-[var(--accent)] md:-left-[37px]"
+        className="absolute -left-[27px] top-[5px] h-2.5 w-2.5 rounded-full border-2 border-[var(--accent)] bg-[var(--bg)] md:-left-[35px]"
         aria-hidden="true"
       />
 
-      <p className="mb-1 text-xs text-[var(--text)]">{date}</p>
-      <p className="font-[var(--heading)] font-bold text-[var(--text-h)]">
+      <p className="mb-1 text-xs font-medium text-[var(--text)]">{date}</p>
+      <p className="font-[var(--heading)] font-semibold text-[var(--text-h)]">
         {title}
       </p>
       {subtitle && (
