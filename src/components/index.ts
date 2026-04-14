@@ -27,3 +27,6 @@ export type { ThemeToggleProps } from './ThemeToggle';
 
 export { LanguageToggle } from './LanguageToggle';
 export type { LanguageToggleProps } from './LanguageToggle';
+
+export { Spacer } from './Spacer';
+export type { SpacerProps } from './Spacer';
