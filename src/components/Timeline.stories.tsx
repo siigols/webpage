@@ -2,14 +2,28 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Timeline } from './Timeline';
 import type { TimelineEvent } from './Timeline';
 
-const meta = {
-  title: 'Components/Timeline',
-  component: Timeline,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Timeline>;
+const timelineMarker = () => (
+  <span
+    className="flex h-2.5 w-2.5 rounded-full border-2 border-[var(--accent)] bg-[var(--bg)]"
+    aria-hidden="true"
+  />
+);
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const timelineContent = (item: TimelineEvent) => (
+  <div>
+    <p className="mb-1 text-xs font-medium text-[var(--text)]">{item.date}</p>
+    <p className="font-[var(--heading)] font-semibold text-[var(--text-h)]">{item.title}</p>
+    {item.subtitle && <p className="text-sm text-[var(--accent)]">{item.subtitle}</p>}
+    {item.description && <div className="mt-2 text-sm text-[var(--text)]">{item.description}</div>}
+  </div>
+);
+
+const timelinePt = {
+  root: { className: 'relative ml-1' },
+  connector: { className: 'grow border-l-2 border-[var(--accent-border)]' },
+  content: { className: 'pb-8 pl-4 md:pl-6 text-left' },
+  opposite: { className: 'hidden' },
+};
 
 const workEvents: TimelineEvent[] = [
   {
@@ -54,17 +68,36 @@ const eduEvents: TimelineEvent[] = [
   },
 ];
 
+const meta = {
+  title: 'Components/Timeline',
+  component: Timeline,
+  tags: ['autodocs'],
+} satisfies Meta<typeof Timeline>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
 export const WorkExperience: Story = {
-  args: { events: workEvents },
+  args: {
+    value: workEvents,
+    content: timelineContent,
+    marker: timelineMarker,
+    pt: timelinePt,
+  },
 };
 
 export const Education: Story = {
-  args: { events: eduEvents },
+  args: {
+    value: eduEvents,
+    content: timelineContent,
+    marker: timelineMarker,
+    pt: timelinePt,
+  },
 };
 
 export const SingleItem: Story = {
   args: {
-    events: [
+    value: [
       {
         date: '2024 – Present',
         title: 'Freelance Consultant',
@@ -72,5 +105,8 @@ export const SingleItem: Story = {
         description: <p>Providing technical consulting for startups and agencies.</p>,
       },
     ],
+    content: timelineContent,
+    marker: timelineMarker,
+    pt: timelinePt,
   },
 };

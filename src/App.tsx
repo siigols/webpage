@@ -3,6 +3,29 @@ import type { TimelineEvent } from './components';
 import { useLanguage } from './useLanguage';
 import { t } from './i18n';
 
+const timelineMarker = () => (
+  <span
+    className="flex h-2.5 w-2.5 rounded-full border-2 border-[var(--accent)] bg-[var(--bg)]"
+    aria-hidden="true"
+  />
+);
+
+const timelineContent = (item: TimelineEvent) => (
+  <div>
+    <p className="mb-1 text-xs font-medium text-[var(--text)]">{item.date}</p>
+    <p className="font-[var(--heading)] font-semibold text-[var(--text-h)]">{item.title}</p>
+    {item.subtitle && <p className="text-sm text-[var(--accent)]">{item.subtitle}</p>}
+    {item.description && <div className="mt-2 text-sm text-[var(--text)]">{item.description}</div>}
+  </div>
+);
+
+const timelinePt = {
+  root: { className: 'relative ml-1' },
+  connector: { className: 'grow border-l-2 border-[var(--accent-border)]' },
+  content: { className: 'pb-8 pl-4 md:pl-6 text-left' },
+  opposite: { className: 'hidden' },
+};
+
 function App() {
   const { language } = useLanguage();
   const tr = t(language);
@@ -179,12 +202,12 @@ function App() {
 
       {/* ── Experience ── */}
       <Section title={tr.sections.experience}>
-        <Timeline events={experienceEvents} />
+        <Timeline value={experienceEvents} content={timelineContent} marker={timelineMarker} pt={timelinePt} />
       </Section>
 
       {/* ── Education ── */}
       <Section title={tr.sections.education}>
-        <Timeline events={educationEvents} />
+        <Timeline value={educationEvents} content={timelineContent} marker={timelineMarker} pt={timelinePt} />
       </Section>
 
       {/* ── Skills / Tech Stack ── */}
@@ -293,7 +316,7 @@ function App() {
 
       {/* ── Volunteer Work ── */}
       <Section title={tr.sections.volunteer}>
-        <Timeline events={volunteerEvents} />
+        <Timeline value={volunteerEvents} content={timelineContent} marker={timelineMarker} pt={timelinePt} />
       </Section>
     </>
   );

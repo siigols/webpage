@@ -17,7 +17,7 @@ export { SocialLink } from './SocialLink';
 export type { SocialLinkProps } from './SocialLink';
 
 export { Timeline } from './Timeline';
-export type { TimelineProps, TimelineEvent } from './Timeline';
+export type { TimelineEvent } from './Timeline';
 
 export { Header } from './Header';
 export type { HeaderProps } from './Header';
