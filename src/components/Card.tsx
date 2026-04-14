@@ -24,8 +24,8 @@ export function Card({
   ...rest
 }: CardProps) {
   const classes = [
-    'block rounded-lg border border-[var(--border)] bg-transparent p-4 md:p-6 transition-all',
-    hover && 'hover:-translate-y-0.5 hover:shadow-[var(--shadow)]',
+    'block rounded-lg border border-[var(--border)] bg-transparent p-4 md:p-6 transition-all duration-300 ease-out',
+    hover && 'hover:-translate-y-1 hover:shadow-[var(--shadow)] hover:border-[var(--accent-border)]',
     'href' in rest && rest.href != null && 'cursor-pointer',
     className,
   ]

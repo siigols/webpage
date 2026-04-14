@@ -24,7 +24,7 @@ export function ContactItem({ icon, label, value }: ContactItemProps) {
       type="button"
       onClick={handleClick}
       aria-label={`Copy ${label}`}
-      className="inline-flex items-center gap-2 rounded-lg bg-[var(--social-bg)] px-3 py-2 text-[var(--text-h)] transition-all hover:shadow-[var(--shadow)] cursor-pointer"
+      className="inline-flex items-center gap-2 rounded-lg bg-[var(--social-bg)] px-3 py-2 text-[var(--text-h)] transition-all duration-300 hover:shadow-[var(--shadow)] hover:-translate-y-0.5 hover:scale-[1.02] cursor-pointer"
     >
       <Icon name={icon} size={18} />
       <span>

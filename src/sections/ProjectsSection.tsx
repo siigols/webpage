@@ -14,8 +14,8 @@ export function ProjectsSection() {
     >
       <Spacer />
       <div className="grid gap-4 text-left md:grid-cols-2">
-        {projects.map((project) => (
-          <Card key={project.title.en} href={project.href}>
+        {projects.map((project, index) => (
+          <Card key={project.title.en} href={project.href} data-stagger={index}>
             <h3 className="mb-1 font-semibold text-[var(--text-h)]">
               {project.title[language]}
             </h3>

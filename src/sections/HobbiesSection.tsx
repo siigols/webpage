@@ -13,8 +13,8 @@ export function HobbiesSection() {
       description={hobbiesDescription[language]}
     >
       <div className="grid gap-4 text-left md:grid-cols-3">
-        {hobbies.map((hobby) => (
-          <Card key={hobby.title.en}>
+        {hobbies.map((hobby, index) => (
+          <Card key={hobby.title.en} data-stagger={index}>
             <h3 className="mb-1 font-semibold text-[var(--text-h)]">
               {hobby.title[language]}
             </h3>

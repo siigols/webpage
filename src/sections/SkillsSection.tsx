@@ -11,8 +11,8 @@ export function SkillsSection() {
     <Section title={tr.sections.skills}>
       <Spacer />
       <div className="flex flex-wrap gap-2 text-left">
-        {skills.map((skill) => (
-          <Badge key={skill} variant="default">
+        {skills.map((skill, index) => (
+          <Badge key={skill} variant="default" data-stagger-deep={index}>
             {skill}
           </Badge>
         ))}

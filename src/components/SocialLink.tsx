@@ -21,7 +21,7 @@ export function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className={`inline-flex items-center gap-2 rounded-lg bg-[var(--social-bg)] px-3 py-2 text-[var(--text-h)] no-underline transition-all hover:shadow-[var(--shadow)] ${className ?? ''}`}
+      className={`inline-flex items-center gap-2 rounded-lg bg-[var(--social-bg)] px-3 py-2 text-[var(--text-h)] no-underline transition-all duration-300 hover:shadow-[var(--shadow)] hover:-translate-y-0.5 hover:scale-[1.02] ${className ?? ''}`}
       {...rest}
     >
       <Icon name={icon} size={18} />

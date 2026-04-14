@@ -10,8 +10,8 @@ export function AwardsSection() {
   return (
     <Section title={tr.sections.awards}>
       <div className="grid gap-4 text-left md:grid-cols-2">
-        {awards.map((award) => (
-          <Card key={award.title.en}>
+        {awards.map((award, index) => (
+          <Card key={award.title.en} data-stagger={index}>
             <p className="mb-1 text-xs font-medium text-[var(--text)]">
               {award.year}
             </p>

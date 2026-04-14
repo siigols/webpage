@@ -120,3 +120,121 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* ── Scroll-reveal animations ────────────────────────────── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Elements waiting to be revealed */
+[data-animate] {
+  opacity: 0;
+}
+
+/* Revealed state */
+[data-animate][data-visible="true"] {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate="fade-up"][data-visible="true"] {
+  animation-name: fade-up;
+  animation-duration: 0.7s;
+}
+
+[data-animate="fade-in"][data-visible="true"] {
+  animation-name: fade-in;
+  animation-duration: 0.6s;
+}
+
+[data-animate="scale-in"][data-visible="true"] {
+  animation-name: scale-in;
+  animation-duration: 0.5s;
+}
+
+/* Stagger delays for child items */
+[data-animate][data-visible="true"] [data-stagger] {
+  opacity: 0;
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-animate][data-visible="true"] [data-stagger="0"] { animation-delay: 0ms; }
+[data-animate][data-visible="true"] [data-stagger="1"] { animation-delay: 80ms; }
+[data-animate][data-visible="true"] [data-stagger="2"] { animation-delay: 160ms; }
+[data-animate][data-visible="true"] [data-stagger="3"] { animation-delay: 240ms; }
+[data-animate][data-visible="true"] [data-stagger="4"] { animation-delay: 320ms; }
+[data-animate][data-visible="true"] [data-stagger="5"] { animation-delay: 400ms; }
+[data-animate][data-visible="true"] [data-stagger="6"] { animation-delay: 480ms; }
+[data-animate][data-visible="true"] [data-stagger="7"] { animation-delay: 560ms; }
+[data-animate][data-visible="true"] [data-stagger="8"] { animation-delay: 640ms; }
+[data-animate][data-visible="true"] [data-stagger="9"] { animation-delay: 720ms; }
+
+/* Stagger for deeply nested items (skill badges, etc.) */
+[data-animate][data-visible="true"] [data-stagger-deep] {
+  opacity: 0;
+  animation: fade-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Generate stagger-deep delays in 40ms increments for up to 20 items */
+[data-animate][data-visible="true"] [data-stagger-deep="0"] { animation-delay: 0ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="1"] { animation-delay: 40ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="2"] { animation-delay: 80ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="3"] { animation-delay: 120ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="4"] { animation-delay: 160ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="5"] { animation-delay: 200ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="6"] { animation-delay: 240ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="7"] { animation-delay: 280ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="8"] { animation-delay: 320ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="9"] { animation-delay: 360ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="10"] { animation-delay: 400ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="11"] { animation-delay: 440ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="12"] { animation-delay: 480ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="13"] { animation-delay: 520ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="14"] { animation-delay: 560ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="15"] { animation-delay: 600ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="16"] { animation-delay: 640ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="17"] { animation-delay: 680ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="18"] { animation-delay: 720ms; }
+[data-animate][data-visible="true"] [data-stagger-deep="19"] { animation-delay: 760ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  [data-animate] [data-stagger],
+  [data-animate] [data-stagger-deep] {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+/* ── Smooth page scrolling ───────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}

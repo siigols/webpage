@@ -34,7 +34,7 @@ export function Header({
       {...rest}
     >
       {/* Avatar */}
-      <div className="mb-4 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-2 border-[var(--border)] bg-[var(--code-bg)]">
+      <div className="mb-4 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-2 border-[var(--border)] bg-[var(--code-bg)] motion-safe:animate-[scale-in_0.6s_cubic-bezier(0.22,1,0.36,1)_both] hover:scale-105 transition-transform duration-300">
         {avatar ? (
           <img
             src={avatar}
@@ -49,16 +49,16 @@ export function Header({
       </div>
 
       {/* Name */}
-      <h1 className="font-[var(--heading)] text-3xl font-medium text-[var(--text-h)]">
+      <h1 className="font-[var(--heading)] text-3xl font-medium text-[var(--text-h)] motion-safe:animate-[fade-up_0.7s_cubic-bezier(0.22,1,0.36,1)_0.15s_both]">
         {name}
       </h1>
 
       {/* Title / role */}
-      <p className="text-[var(--text)]">{title}</p>
+      <p className="text-[var(--text)] motion-safe:animate-[fade-up_0.7s_cubic-bezier(0.22,1,0.36,1)_0.3s_both]">{title}</p>
 
       {/* Slot for social links or extra content */}
       {children && (
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
+        <div className="mt-4 flex flex-wrap justify-center gap-2 motion-safe:animate-[fade-up_0.7s_cubic-bezier(0.22,1,0.36,1)_0.45s_both]">
           {children}
         </div>
       )}
