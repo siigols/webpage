@@ -21,3 +21,9 @@ export type { TimelineProps, TimelineItemProps } from './Timeline';
 
 export { Header } from './Header';
 export type { HeaderProps } from './Header';
+
+export { ThemeToggle } from './ThemeToggle';
+export type { ThemeToggleProps } from './ThemeToggle';
+
+export { LanguageToggle } from './LanguageToggle';
+export type { LanguageToggleProps } from './LanguageToggle';
