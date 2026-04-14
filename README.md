@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# webpage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, frontend-only React application built with Vite, TypeScript, Tailwind CSS, and Storybook.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React** — UI library
+- **Vite** — fast dev server and build tool
+- **TypeScript** — static typing
+- **Tailwind CSS** — utility-first styling
+- **Storybook** — component development and documentation
+- **ESLint** — code linting
 
-## React Compiler
+> This is a **frontend-only** project. There is no backend, API, or database.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup
 
-## Expanding the ESLint configuration
+Requires [pnpm](https://pnpm.io/installation).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command                | Description                         |
+|------------------------|-------------------------------------|
+| `pnpm dev`             | Start local development server      |
+| `pnpm build`           | Type-check and build for production |
+| `pnpm preview`         | Preview the production build        |
+| `pnpm storybook`       | Start Storybook component explorer  |
+| `pnpm build-storybook` | Build Storybook as static site      |
+| `pnpm lint`            | Run ESLint                          |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+
+```
+/src
+  /components       # Reusable UI components
+    Button.tsx
+    Button.stories.tsx
+  App.tsx
+  main.tsx
+  index.css
+/public
+.storybook/         # Storybook configuration
+index.html
+vite.config.ts
+tsconfig.json
+eslint.config.js
 ```
