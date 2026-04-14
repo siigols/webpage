@@ -1,4 +1,5 @@
-import { Header, ThemeToggle, LanguageToggle, SocialLink, Section, Card, Badge, Timeline, TimelineItem } from './components';
+import { Header, ThemeToggle, LanguageToggle, SocialLink, Section, Card, Badge, Timeline } from './components';
+import type { TimelineEvent } from './components';
 import { useLanguage } from './useLanguage';
 import { t } from './i18n';
 
@@ -37,25 +38,28 @@ function App() {
       </Section>
 
       <Section title={tr.sections.experience}>
-        <Timeline>
-          <TimelineItem
-            date={`2023 – ${tr.common.present}`}
-            title="Software Engineer"
-            subtitle="Acme Corp"
-          >
-            <p>{language === 'en' ? 'Building great software.' : 'Bygger fantastisk programvare.'}</p>
-          </TimelineItem>
-        </Timeline>
+        <Timeline
+          events={[
+            {
+              date: `2023 – ${tr.common.present}`,
+              title: 'Software Engineer',
+              subtitle: 'Acme Corp',
+              description: <p>{language === 'en' ? 'Building great software.' : 'Bygger fantastisk programvare.'}</p>,
+            },
+          ] satisfies TimelineEvent[]}
+        />
       </Section>
 
       <Section title={tr.sections.education}>
-        <Timeline>
-          <TimelineItem
-            date="2019 – 2022"
-            title={language === 'en' ? 'B.Sc. Computer Science' : 'Bachelor i informatikk'}
-            subtitle={language === 'en' ? 'University of Technology' : 'Teknologiuniversitetet'}
-          />
-        </Timeline>
+        <Timeline
+          events={[
+            {
+              date: '2019 – 2022',
+              title: language === 'en' ? 'B.Sc. Computer Science' : 'Bachelor i informatikk',
+              subtitle: language === 'en' ? 'University of Technology' : 'Teknologiuniversitetet',
+            },
+          ] satisfies TimelineEvent[]}
+        />
       </Section>
     </>
   );

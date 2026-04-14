@@ -16,8 +16,8 @@ export type { CardProps } from './Card';
 export { SocialLink } from './SocialLink';
 export type { SocialLinkProps } from './SocialLink';
 
-export { Timeline, TimelineItem } from './Timeline';
-export type { TimelineProps, TimelineItemProps } from './Timeline';
+export { Timeline } from './Timeline';
+export type { TimelineProps, TimelineEvent } from './Timeline';
 
 export { Header } from './Header';
 export type { HeaderProps } from './Header';
