@@ -10,12 +10,8 @@ function getStoredLanguage(): Language {
   if (stored === 'en' || stored === 'no') {
     return stored;
   }
-  // Default based on browser language
-  const browserLang = navigator.language.toLowerCase();
-  if (browserLang.startsWith('nb') || browserLang.startsWith('nn') || browserLang.startsWith('no')) {
-    return 'no';
-  }
-  return 'en';
+  // Default to Norwegian
+  return 'no';
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
