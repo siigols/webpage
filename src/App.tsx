@@ -11,19 +11,22 @@ const timelineMarker = () => (
 );
 
 const timelineContent = (item: TimelineEvent) => (
-  <div>
+  <Card hover={false}>
     <p className="mb-1 text-xs font-medium text-[var(--text)]">{item.date}</p>
     <p className="font-[var(--heading)] font-semibold text-[var(--text-h)]">{item.title}</p>
     {item.subtitle && <p className="text-sm text-[var(--accent)]">{item.subtitle}</p>}
     {item.description && <div className="mt-2 text-sm text-[var(--text)]">{item.description}</div>}
-  </div>
+  </Card>
 );
 
+/** Structural flex classes needed because PrimeReactProvider unstyled:true strips all built-in CSS. */
 const timelinePt = {
-  root: { className: 'relative ml-1' },
-  connector: { className: 'grow border-l-2 border-[var(--accent-border)]' },
-  content: { className: 'pb-8 pl-4 md:pl-6 text-left' },
+  root: { className: 'relative ml-1 flex flex-col' },
+  event: { className: 'flex min-h-[70px] last:min-h-0' },
   opposite: { className: 'hidden' },
+  separator: { className: 'flex flex-col items-center' },
+  connector: { className: 'grow w-0.5 bg-[var(--accent-border)]' },
+  content: { className: 'flex-1 pb-6 pl-4 md:pl-6 text-left' },
 };
 
 function App() {
