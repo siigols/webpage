@@ -21,12 +21,18 @@ const timelineContent = (item: TimelineEvent) => (
 
 /** Structural flex classes needed because PrimeReactProvider unstyled:true strips all built-in CSS. */
 const timelinePt = {
-  root: { className: 'relative ml-1 flex flex-col' },
-  event: { className: 'flex min-h-[70px] last:min-h-0' },
-  opposite: { className: 'hidden' },
-  separator: { className: 'flex flex-col items-center' },
+  root: { className: 'flex flex-col' },
+  event: (options: { context: { index: number } }) => ({
+    className: `flex min-h-[70px] last:min-h-0 ${options.context.index % 2 === 1 ? 'flex-row-reverse' : ''}`,
+  }),
+  opposite: (options: { context: { index: number } }) => ({
+    className: `flex-1 px-4 ${options.context.index % 2 === 1 ? 'text-left' : 'text-right'}`,
+  }),
+  separator: { className: 'flex flex-col items-center flex-none' },
   connector: { className: 'grow w-0.5 bg-[var(--accent-border)]' },
-  content: { className: 'flex-1 pb-6 pl-4 md:pl-6 text-left' },
+  content: (options: { context: { index: number } }) => ({
+    className: `flex-1 pb-6 px-4 ${options.context.index % 2 === 1 ? 'text-right' : 'text-left'}`,
+  }),
 };
 
 const workEvents: TimelineEvent[] = [
@@ -84,6 +90,7 @@ type Story = StoryObj<typeof meta>;
 export const WorkExperience: Story = {
   args: {
     value: workEvents,
+    align: 'alternate',
     content: timelineContent,
     marker: timelineMarker,
     pt: timelinePt,
@@ -93,6 +100,7 @@ export const WorkExperience: Story = {
 export const Education: Story = {
   args: {
     value: eduEvents,
+    align: 'alternate',
     content: timelineContent,
     marker: timelineMarker,
     pt: timelinePt,
@@ -109,6 +117,7 @@ export const SingleItem: Story = {
         description: <p>Providing technical consulting for startups and agencies.</p>,
       },
     ],
+    align: 'alternate',
     content: timelineContent,
     marker: timelineMarker,
     pt: timelinePt,
