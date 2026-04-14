@@ -18,6 +18,9 @@ export const no: Translations = {
     education: 'Utdanning',
     skills: 'Ferdigheter',
     about: 'Om meg',
+    hobbies: 'Hobbyer & Interesser',
+    awards: 'Priser & Sertifiseringer',
+    volunteer: 'Frivillig Arbeid',
   },
   common: {
     present: 'Nåværende',

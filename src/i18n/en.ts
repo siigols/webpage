@@ -18,6 +18,9 @@ export const en: Translations = {
     education: 'Education',
     skills: 'Skills',
     about: 'About',
+    hobbies: 'Hobbies & Interests',
+    awards: 'Awards & Certifications',
+    volunteer: 'Volunteer Work',
   },
   common: {
     present: 'Present',

@@ -19,6 +19,9 @@ export interface Translations {
     education: string;
     skills: string;
     about: string;
+    hobbies: string;
+    awards: string;
+    volunteer: string;
   };
   // Common labels
   common: {
