@@ -1,31 +1,19 @@
 import { useTheme } from '../useTheme';
 import { useLanguage } from '../useLanguage';
-import type { Theme } from '../contexts';
 import { t } from '../i18n';
 import { Icon } from './Icon';
-
-const nextThemeMap: Record<Theme, Theme> = {
-  system: 'light',
-  light: 'dark',
-  dark: 'system',
-};
-
-const themeIcon: Record<Theme, string> = {
-  light: 'sun-icon',
-  system: 'monitor-icon',
-  dark: 'moon-icon',
-};
 
 export interface ThemeToggleProps {
   className?: string;
 }
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
-  const { theme, setTheme } = useTheme();
+  const { resolved, setTheme } = useTheme();
   const { language } = useLanguage();
   const tr = t(language);
 
-  const next = nextThemeMap[theme];
+  const next = resolved === 'light' ? 'dark' : 'light';
+  const icon = next === 'dark' ? 'moon-icon' : 'sun-icon';
 
   return (
     <button
@@ -39,7 +27,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
         className ?? '',
       ].join(' ')}
     >
-      <Icon name={themeIcon[next]} size={16} />
+      <Icon name={icon} size={16} />
     </button>
   );
 }
