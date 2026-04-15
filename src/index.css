@@ -243,6 +243,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ── Timeline: collapse to single-column on small screens ── */
+@media (max-width: 765px) {
+  .tl-event {
+    flex-direction: row !important;
+  }
+
+  .tl-opposite {
+    display: none !important;
+  }
+
+  .tl-content,
+  .tl-card-content {
+    text-align: left !important;
+  }
+
+  .tl-see-more {
+    flex-direction: row !important;
+  }
+}
+
 /* ── Cursor glow ─────────────────────────────────────────── */
 .cursor-glow {
   position: fixed;
