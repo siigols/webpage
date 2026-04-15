@@ -4,11 +4,17 @@ import type { Theme } from '../contexts';
 import { t } from '../i18n';
 import { Icon } from './Icon';
 
-const themes: { value: Theme; icon: string }[] = [
-  { value: 'light', icon: 'sun-icon' },
-  { value: 'system', icon: 'monitor-icon' },
-  { value: 'dark', icon: 'moon-icon' },
-];
+const nextThemeMap: Record<Theme, Theme> = {
+  system: 'light',
+  light: 'dark',
+  dark: 'system',
+};
+
+const themeIcon: Record<Theme, string> = {
+  light: 'sun-icon',
+  system: 'monitor-icon',
+  dark: 'moon-icon',
+};
 
 export interface ThemeToggleProps {
   className?: string;
@@ -19,33 +25,21 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   const { language } = useLanguage();
   const tr = t(language);
 
+  const next = nextThemeMap[theme];
+
   return (
-    <div
-      role="radiogroup"
-      aria-label={tr.theme.label}
-      className={`inline-flex items-center rounded-lg border border-[var(--border)] bg-[var(--code-bg)] p-0.5 ${className ?? ''}`}
+    <button
+      type="button"
+      aria-label={tr.theme[next]}
+      title={tr.theme[next]}
+      onClick={() => setTheme(next)}
+      className={[
+        'flex cursor-pointer items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--code-bg)] p-1.5 transition-all',
+        'text-[var(--text)] hover:text-[var(--text-h)]',
+        className ?? '',
+      ].join(' ')}
     >
-      {themes.map(({ value, icon }) => {
-        const active = theme === value;
-        return (
-          <button
-            key={value}
-            role="radio"
-            aria-checked={active}
-            aria-label={tr.theme[value]}
-            title={tr.theme[value]}
-            onClick={() => setTheme(value)}
-            className={[
-              'flex cursor-pointer items-center justify-center rounded-md p-1.5 transition-all',
-              active
-                ? 'bg-[var(--bg)] text-[var(--accent)] shadow-sm'
-                : 'text-[var(--text)] hover:text-[var(--text-h)]',
-            ].join(' ')}
-          >
-            <Icon name={icon} size={16} />
-          </button>
-        );
-      })}
-    </div>
+      <Icon name={themeIcon[next]} size={16} />
+    </button>
   );
 }
