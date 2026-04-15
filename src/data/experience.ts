@@ -22,7 +22,7 @@ export const experience: ExperienceData[] = [
   {
     slug: "sparebanken-norge",
     date: "September 2025 – {{present}}",
-    title: { en: "Systemdeveloper", no: "Systemutvikler" },
+    title: { en: "System Developer", no: "Systemutvikler" },
     subtitle: "Sparebanken Norge",
     description: { en: "Part-time", no: "Deltid" },
     roles: [
@@ -34,23 +34,55 @@ export const experience: ExperienceData[] = [
     ],
   },
   {
-    slug: "fjord-digital",
-    date: "2020 – 2022",
-    title: { en: "Frontend Developer", no: "Frontend-utvikler" },
-    subtitle: "Fjord Digital",
+    slug: "uib",
+    date: "August 2025 – November 2025",
+    title: { en: "Teaching Assistant", no: "Undervisningsassistent" },
+    subtitle: "Universitetet i Bergen (UiB)",
     description: {
-      en: "Built and shipped customer-facing dashboards using React and TypeScript. Implemented real-time WebSocket features and improved Lighthouse scores from 62 to 94.",
-      no: "Bygde og lanserte kundevendte dashbord med React og TypeScript. Implementerte sanntids WebSocket-funksjonalitet og forbedret Lighthouse-score fra 62 til 94.",
+      en: "Part-time",
+      no: "Deltid",
+    },
+    details: {
+      en: "In the course ITØK204 (econometrics and data analysis).",
+      no: "I emnet ITØK204 (økonometri og dataanalyse).",
     },
   },
   {
-    slug: "kodeverkstedet",
-    date: "2018 – 2020",
-    title: { en: "Junior Developer", no: "Juniorutvikler" },
-    subtitle: "Kodeverkstedet AS",
+    slug: "avo-consulting",
+    date: "January 2025 – May 2025",
+    title: { en: "Internship", no: "Internship" },
+    subtitle: "Avo Consulting",
     description: {
-      en: "Developed responsive websites for local businesses. Gained hands-on experience with Git, CI/CD, and agile workflows.",
-      no: "Utviklet responsive nettsider for lokale bedrifter. Fikk praktisk erfaring med Git, CI/CD og smidige arbeidsmetoder.",
+      en: "Part-time",
+      no: "Deltid",
     },
+  },
+  {
+    slug: "telenor",
+    date: "August 2024 – April 2025",
+    title: { en: "Assistant Store Manager", no: "Assisterende butikkleder" },
+    subtitle: "Telenor",
+    description: { en: "Part-time", no: "Deltid" },
+    roles: [
+      {
+        date: "November 2021 – July 2024",
+        title: { en: "Sales Associate", no: "Selger" },
+        subtitle: "Telenor",
+      },
+    ],
+  },
+  {
+    slug: "finnfjord",
+    date: "April 2018 – August 2021",
+    title: { en: "Process Operator", no: "Prosessoperatør" },
+    subtitle: "Finnfjord AS",
+    description: { en: "Part-time", no: "Deltid" },
+  },
+  {
+    slug: "forsvaret",
+    date: "August 2019 – June 2020",
+    title: { en: "Military Service", no: "Verneplikt" },
+    subtitle: "Forsvaret – Norwegian Armed Forces",
+    description: { en: "Full-time", no: "Heltid" },
   },
 ];

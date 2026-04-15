@@ -5,31 +5,26 @@ export interface HobbyData {
   description: Bilingual;
 }
 
-export const hobbiesDescription: Bilingual = {
-  en: "What I do when I'm not coding.",
-  no: "Hva jeg gjør når jeg ikke koder.",
-};
-
 export const hobbies: HobbyData[] = [
   {
-    title: { en: "Hiking & Skiing", no: "Fjelltur & Ski" },
+    title: { en: "Hiking & skiing", no: "Fjelltur og ski" },
     description: {
-      en: "Exploring Norway's mountains year-round — hiking in summer, cross-country skiing in winter.",
-      no: "Utforsker norske fjell hele året — fotturer om sommeren, langrenn om vinteren.",
+      en: "Enjoy going on hikes both in summer and winter. Especially fond of ski touring.",
+      no: "Liker å gå turer både sommer og vinter. Spesielt glad i toppturski.",
     },
   },
   {
-    title: { en: "Photography", no: "Fotografering" },
+    title: { en: "Running", no: "Løping" },
     description: {
-      en: "Landscape and street photography. Shooting with a Fujifilm X-T5 and editing in Lightroom.",
-      no: "Landskaps- og gatefotografering. Fotograferer med Fujifilm X-T5 og redigerer i Lightroom.",
+      en: "Enjoy running both in the city and in nature. Participated in several races for fun. ",
+      no: "Liker å løpe både i byen og i naturen. Deltatt i flere løp for moro skyld.",
     },
   },
   {
-    title: { en: "Open Source", no: "Åpen kildekode" },
+    title: { en: "Friends and family", no: "Venner og familie" },
     description: {
-      en: "Contributing to accessibility tooling and design-system libraries on GitHub.",
-      no: "Bidrar til tilgjengelighetsverktøy og designsystem-biblioteker på GitHub.",
+      en: "Value spending time with friends and family, whether it's going out for dinner or just hanging out.",
+      no: "Setter pris på å tilbringe tid med venner og familie, enten det er å gå ut og spise eller bare henge sammen.",
     },
   },
 ];

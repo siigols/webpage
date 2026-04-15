@@ -1,6 +1,7 @@
 import { useScrollReveal } from "../useScrollReveal";
+import { Spacer } from "./Spacer";
 
-export interface SectionProps extends React.ComponentProps<'section'> {
+export interface SectionProps extends React.ComponentProps<"section"> {
   title: string;
   description?: string;
   children: React.ReactNode;
@@ -21,13 +22,13 @@ export function Section({
       ref={ref}
       data-animate="fade-up"
       id={id}
-      className={`border-b border-[var(--border)] px-4 py-8 md:px-6 md:py-12 ${className ?? ''}`}
+      className={`border-b border-[var(--border)] px-4 py-8 md:px-6 md:py-12 ${className ?? ""}`}
       {...rest}
     >
       <h2 className="text-left text-[var(--text-h)]">{title}</h2>
-      {description && (
-        <p className="mb-6 text-[var(--text)]">{description}</p>
-      )}
+      {description && <p className="mb-6 text-[var(--text)]">{description}</p>}
+
+      <Spacer size="sm" />
       {children}
     </section>
   );

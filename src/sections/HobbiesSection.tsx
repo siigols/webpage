@@ -1,5 +1,5 @@
 import { Card, Section } from "../components";
-import { hobbies, hobbiesDescription } from "../data/hobbies";
+import { hobbies } from "../data/hobbies";
 import { t } from "../i18n";
 import { useLanguage } from "../useLanguage";
 
@@ -8,10 +8,7 @@ export function HobbiesSection() {
   const tr = t(language);
 
   return (
-    <Section
-      title={tr.sections.hobbies}
-      description={hobbiesDescription[language]}
-    >
+    <Section title={tr.sections.hobbies}>
       <div className="grid gap-4 text-left md:grid-cols-3">
         {hobbies.map((hobby, index) => (
           <Card key={hobby.title.en} data-stagger={index}>

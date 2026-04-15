@@ -9,20 +9,78 @@ export interface EducationData {
 
 export const education: EducationData[] = [
   {
-    date: "2015 – 2018",
-    title: { en: "B.Sc. Computer Science", no: "Bachelor i informatikk" },
-    subtitle: { en: "University of Oslo", no: "Universitetet i Oslo" },
+    date: "August 2023 – June 2027",
+    title: {
+      en: "M.Sc. Information Technology and Economics",
+      no: "Sivilingeniør, Informasjonsteknologi og Økonomi",
+    },
+    subtitle: {
+      en: "University of Bergen (UiB)",
+      no: "Universitetet i Bergen (UiB)",
+    },
     description: {
-      en: "Specialised in software engineering and human-computer interaction. Thesis on accessible single-page applications.",
-      no: "Spesialisering i programvareteknikk og menneske-maskin-interaksjon. Bacheloroppgave om tilgjengelige enkeltsideapplikasjoner.",
+      en: "Main study",
+      no: "Hovedstudium",
     },
   },
   {
-    date: "2012 – 2015",
+    date: "August 2024 – June 2027",
     title: {
-      en: "Upper Secondary — IT & Media",
-      no: "Videregående — IT og medieproduksjon",
+      en: "B.Sc. Physics",
+      no: "Bachelor i fysikk",
     },
-    subtitle: { en: "Bergen Cathedral School", no: "Bergen Katedralskole" },
+    subtitle: {
+      en: "University of Bergen (UiB)",
+      no: "Universitetet i Bergen (UiB)",
+    },
+    description: {
+      en: "Taking a bachelor's degree in physics, to use courses from Ocean Techonology.",
+      no: "Tar en bachelor i fysikk, for å kunne bruke emner fra havteknologi.",
+    },
+  },
+  {
+    date: "January 2023 – June 2023",
+    title: {
+      en: "Exchange",
+      no: "Utveksling",
+    },
+    subtitle: {
+      en: "DTU – Technical University of Denmark",
+      no: "DTU – Technical University of Denmark",
+    },
+    description: {
+      en: "Exchange during my final semester before switching.",
+      no: "Utveksling i det siste semesteret før jeg byttet studie.",
+    },
+  },
+  {
+    date: "2020 – 2023",
+    title: {
+      en: "M.Sc. Ocean Technology",
+      no: "Havteknologi (sivilingeniør)",
+    },
+    subtitle: {
+      en: "University of Bergen (UiB)",
+      no: "Universitetet i Bergen (UiB)",
+    },
+    description: {
+      en: "Started my studies in ocean technology, but switched to IT and economics after three years.",
+      no: "Startet på havteknologi, men byttet til IT og økonomi etter tre år.",
+    },
+  },
+  {
+    date: "2016 - 2019",
+    title: {
+      en: "High school",
+      no: "Videregående skole",
+    },
+    subtitle: {
+      en: "Senja videregående skole",
+      no: "Senja videregående skole",
+    },
+    description: {
+      en: "Natural science and elite sports.",
+      no: "Realfag og toppidrett.",
+    },
   },
 ];
