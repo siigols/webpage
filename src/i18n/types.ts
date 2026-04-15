@@ -29,5 +29,7 @@ export interface Translations {
     readMore: string;
     viewProject: string;
     contact: string;
+    seeMore: string;
+    close: string;
   };
 }

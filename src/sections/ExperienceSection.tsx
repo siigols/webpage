@@ -9,13 +9,24 @@ export function ExperienceSection() {
   const { language } = useLanguage();
   const tr = t(language);
 
-  const events: TimelineEvent[] = experience.map((item) => ({
+  const events: TimelineEvent[] = experience.map((item, index) => ({
     date: item.date.replace("{{present}}", tr.common.present),
     title: item.title[language],
     subtitle: item.subtitle,
+    alignRight: index % 2 === 1,
     description: item.description ? (
       <p>{item.description[language]}</p>
     ) : undefined,
+    seeMoreLabel: tr.common.seeMore,
+    seeMoreHref: `/erfaring/${item.slug}`,
+    subItems: item.roles?.map((role) => ({
+      date: role.date.replace("{{present}}", tr.common.present),
+      title: role.title[language],
+      subtitle: role.subtitle,
+      description: role.description ? (
+        <p>{role.description[language]}</p>
+      ) : undefined,
+    })),
   }));
 
   return (

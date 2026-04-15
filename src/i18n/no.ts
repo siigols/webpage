@@ -27,5 +27,7 @@ export const no: Translations = {
     readMore: "Les mer",
     viewProject: "Se prosjekt",
     contact: "Kontakt",
+    seeMore: "Se mer",
+    close: "Lukk",
   },
 };

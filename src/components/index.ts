@@ -35,3 +35,6 @@ export { Spacer } from "./Spacer";
 export type { SpacerProps } from "./Spacer";
 
 export { CursorGlow } from "./CursorGlow";
+
+export { StickyHeader } from "./StickyHeader";
+export type { StickyHeaderProps } from "./StickyHeader";

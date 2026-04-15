@@ -27,5 +27,7 @@ export const en: Translations = {
     readMore: "Read more",
     viewProject: "View project",
     contact: "Contact",
+    seeMore: "See more",
+    close: "Close",
   },
 };

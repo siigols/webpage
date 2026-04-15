@@ -1,23 +1,40 @@
 import type { Bilingual } from "./types";
 
+export interface ExperienceRole {
+  date: string;
+  title: Bilingual;
+  description?: Bilingual;
+  subtitle?: string;
+  details?: Bilingual;
+}
+
 export interface ExperienceData {
+  slug: string;
   date: string;
   title: Bilingual;
   subtitle: string;
   description?: Bilingual;
+  details?: Bilingual;
+  roles?: ExperienceRole[];
 }
 
 export const experience: ExperienceData[] = [
   {
-    date: "2022 – {{present}}",
-    title: { en: "Senior Frontend Engineer", no: "Senior Frontend-utvikler" },
-    subtitle: "Nordvik Technologies",
-    description: {
-      en: "Leading the design-system team. Migrated the component library from Styled Components to Tailwind CSS, cutting bundle size by 35%. Mentoring two junior developers.",
-      no: "Leder designsystem-teamet. Migrerte komponentbiblioteket fra Styled Components til Tailwind CSS og reduserte pakkestørrelsen med 35 %. Veileder to juniorutviklere.",
-    },
+    slug: "sparebanken-norge",
+    date: "September 2025 – {{present}}",
+    title: { en: "Systemdeveloper", no: "Systemutvikler" },
+    subtitle: "Sparebanken Norge",
+    description: { en: "Part-time", no: "Deltid" },
+    roles: [
+      {
+        date: "Juni 2025 – August 2025",
+        title: { en: "Summer Intern", no: "Sommerstudent" },
+        subtitle: "Sparebanken Norge",
+      },
+    ],
   },
   {
+    slug: "fjord-digital",
     date: "2020 – 2022",
     title: { en: "Frontend Developer", no: "Frontend-utvikler" },
     subtitle: "Fjord Digital",
@@ -27,6 +44,7 @@ export const experience: ExperienceData[] = [
     },
   },
   {
+    slug: "kodeverkstedet",
     date: "2018 – 2020",
     title: { en: "Junior Developer", no: "Juniorutvikler" },
     subtitle: "Kodeverkstedet AS",
