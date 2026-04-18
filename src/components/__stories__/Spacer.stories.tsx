@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Spacer } from './Spacer';
+import { Spacer } from '../Spacer';
 
 const meta = {
   title: 'Components/Spacer',

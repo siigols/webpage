@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Header } from './Header';
-import { SocialLink } from './SocialLink';
+import { Header } from '../Header';
+import { SocialLink } from '../SocialLink';
 
 const meta = {
   title: 'Components/Header',

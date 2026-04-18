@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SocialLink } from './SocialLink';
+import { SocialLink } from '../SocialLink';
 
 const meta = {
   title: 'Components/SocialLink',
