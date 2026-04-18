@@ -38,7 +38,12 @@ pnpm install
 /src
   /components       # Reusable UI components
     Button.tsx
-    Button.stories.tsx
+    /__stories__
+      Button.stories.tsx
+  /pages            # Route-level pages
+    LandingPage.tsx
+    /__stories__
+      LandingPage.stories.tsx
   App.tsx
   main.tsx
   index.css

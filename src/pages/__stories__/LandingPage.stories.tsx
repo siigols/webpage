@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PrimeReactProvider } from "primereact/api";
-import { LanguageProvider } from "../LanguageProvider";
-import { ThemeProvider } from "../ThemeProvider";
-import { LandingPage } from "./LandingPage";
+import { LanguageProvider } from "../../LanguageProvider";
+import { ThemeProvider } from "../../ThemeProvider";
+import { LandingPage } from "../LandingPage";
 
 const meta = {
   title: "Pages/LandingPage",

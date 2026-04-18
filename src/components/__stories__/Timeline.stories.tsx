@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Timeline } from './Timeline';
-import type { TimelineEvent } from './Timeline';
-import { Card } from './Card';
+import { Timeline } from '../Timeline';
+import type { TimelineEvent } from '../Timeline';
+import { Card } from '../Card';
 
 const timelineMarker = () => (
   <span
