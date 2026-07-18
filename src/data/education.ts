@@ -12,75 +12,41 @@ export const education: EducationData[] = [
     date: "August 2023 – June 2027",
     title: {
       en: "M.Sc. Information Technology and Economics",
-      no: "Sivilingeniør, Informasjonsteknologi og Økonomi",
+      no: "Integrert master, Sivilingeniør – Informasjonsteknologi og økonomi",
     },
     subtitle: {
       en: "University of Bergen (UiB)",
       no: "Universitetet i Bergen (UiB)",
     },
     description: {
-      en: "Main study",
-      no: "Hovedstudium",
+      en: "Specialization in optimization and quantitative analysis. Taking master's courses at NHH in fall 2026. Writing master's thesis on interest rate risk modeling in a bank in spring 2027. Completing 5-year program in 4 years due to prior studies.",
+      no: "Spesialisering innen optimering og kvantitativ analyse. Tar masteremner ved NHH høsten 26. Skal skrive masteroppgave om renterisikomodellering i en bank våren 27. Fullfører 5-årig studie på 4 år pga. tidligere studier.",
     },
   },
   {
-    date: "August 2024 – June 2027",
+    date: "August 2023 – June 2027",
     title: {
-      en: "B.Sc. Physics",
-      no: "Bachelor i fysikk",
+      en: "B.Sc. Applied Mathematics",
+      no: "Bachelor i anvendt matematikk",
     },
     subtitle: {
       en: "University of Bergen (UiB)",
       no: "Universitetet i Bergen (UiB)",
     },
     description: {
-      en: "Taking a bachelor's degree in physics, to use courses from Ocean Techonology.",
-      no: "Tar en bachelor i fysikk, for å kunne bruke emner fra havteknologi.",
+      en: "Taking additional courses to complete a bachelor's degree in applied mathematics alongside the main program.",
+      no: "Tar tilleggsemner for å fullføre en bachelorgrad i anvendt matematikk parallelt med hovedstudiet.",
     },
   },
   {
-    date: "January 2023 – June 2023",
+    date: "2016 – 2019",
     title: {
-      en: "Exchange",
-      no: "Utveksling",
-    },
-    subtitle: {
-      en: "DTU – Technical University of Denmark",
-      no: "DTU – Technical University of Denmark",
-    },
-    description: {
-      en: "Exchange during my final semester before switching.",
-      no: "Utveksling i det siste semesteret før jeg byttet studie.",
-    },
-  },
-  {
-    date: "2020 – 2023",
-    title: {
-      en: "M.Sc. Ocean Technology",
-      no: "Havteknologi (sivilingeniør)",
-    },
-    subtitle: {
-      en: "University of Bergen (UiB)",
-      no: "Universitetet i Bergen (UiB)",
-    },
-    description: {
-      en: "Started my studies in ocean technology, but switched to IT and economics after three years.",
-      no: "Startet på havteknologi, men byttet til IT og økonomi etter tre år.",
-    },
-  },
-  {
-    date: "2016 - 2019",
-    title: {
-      en: "High school",
-      no: "Videregående skole",
+      en: "High School",
+      no: "Studiespesialisering",
     },
     subtitle: {
       en: "Senja videregående skole",
-      no: "Senja videregående skole",
-    },
-    description: {
-      en: "Natural science and elite sports.",
-      no: "Realfag og toppidrett.",
+      no: "Senja vgs",
     },
   },
 ];

@@ -5,7 +5,7 @@ import { LandingPage } from "./pages/LandingPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/webpage">
       <CursorGlow />
       <Routes>
         <Route path="/" element={<LandingPage />} />
