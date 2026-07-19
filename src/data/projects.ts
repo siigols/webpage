@@ -24,14 +24,14 @@ export const projects: ProjectData[] = [
   },
   {
     title: {
-      en: "Rework of Ability Forwards website",
-      no: "Rework av Ability Forwards nettside",
+      en: "Jeopardy App",
+      no: "Jeopardy-app",
     },
     description: {
-      en: "A complete rework of the website for Ability Forward, a non-profit organization that helps children in Uganda. In progress and not live. Built with React 19, TypeScript, and Tailwind CSS v4.",
-      no: "En komplett rework av nettsiden til Ability Forward, en ideell organisasjon som hjelper barn i Uganda. Under arbeid og ikke live. Laget med React 19, TypeScript og Tailwind CSS v4.",
+      en: "A multiplayer Jeopardy game with a phone buzzer system, six question types, sound effects, and real-time scoring via Socket.io.",
+      no: "Et Jeopardy-spill for flere spillere med buzzersystem på mobil, seks spørsmålstyper, lydeffekter og sanntidspoeng via Socket.io.",
     },
-    href: "https://abilityforward.org",
-    tags: ["React", "TypeScript", "Tailwind"],
+    href: "https://jeopardy-app-gtn4.onrender.com/",
+    tags: ["React", "TypeScript", "Socket.io", "Express"],
   },
 ];
