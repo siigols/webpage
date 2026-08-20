@@ -1,2 +1,6 @@
 allowBuilds:
   esbuild: false
+
+overrides:
+  framer-motion: 13.1.0
+  motion-dom: 13.0.0
