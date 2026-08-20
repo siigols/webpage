@@ -12,6 +12,10 @@ export const volunteer: VolunteerData[] = [
     date: "September 2024 – January 2026",
     title: { en: "Vice President", no: "Nestleder" },
     subtitle: "ITxBergen",
+    description: {
+      en: "Responsible for planning and running a career day for IT students across study programs in Bergen.",
+      no: "Ansvarlig for planlegging og gjennomføring av karrieredag for IT-studenter på tvers av studieprogrammer i Bergen.",
+    },
   },
   {
     date: "August 2024 – September 2025",

@@ -3,7 +3,7 @@ import { Section, Timeline } from "../components";
 import { education } from "../data/education";
 import { t } from "../i18n";
 import { useLanguage } from "../useLanguage";
-import { timelineContent, timelineMarker, timelinePt } from "./timelineHelpers";
+import { makeTimelineContent, timelineMarker, timelinePt } from "./timelineHelpers";
 
 export function EducationSection() {
   const { language } = useLanguage();
@@ -23,7 +23,10 @@ export function EducationSection() {
       <Timeline
         value={events}
         align="alternate"
-        content={timelineContent}
+        content={makeTimelineContent({
+          seeMore: tr.common.seeMore,
+          close: tr.common.close,
+        })}
         marker={timelineMarker}
         pt={timelinePt}
       />

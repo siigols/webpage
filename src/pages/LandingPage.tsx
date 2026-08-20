@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { StickyHeader } from "../components/StickyHeader";
+import { AboutSection } from "../sections/AboutSection";
 import { AwardsSection } from "../sections/AwardsSection";
 import { EducationSection } from "../sections/EducationSection";
 import { ExperienceSection } from "../sections/ExperienceSection";
@@ -19,6 +20,7 @@ export function LandingPage() {
       <HeaderSection />
       <div ref={headerEndRef} />
       <StickyHeader sentinelRef={headerEndRef} />
+      <AboutSection />
       <ExperienceSection />
       <EducationSection />
       <ProjectsSection />

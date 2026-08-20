@@ -33,7 +33,7 @@ export const headerData: HeaderData = {
       label: "GitHub",
     },
     {
-      href: "https://www.linkedin.com/in/sigurd-dårflot-olsen-1b7003225",
+      href: "https://www.linkedin.com/in/sigurdolsen",
       icon: "linkedin-icon",
       label: "LinkedIn",
     },

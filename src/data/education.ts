@@ -24,6 +24,21 @@ export const education: EducationData[] = [
     },
   },
   {
+    date: "August 2026 – December 2026",
+    title: {
+      en: "Exchange Semester",
+      no: "Utveksling",
+    },
+    subtitle: {
+      en: "Norwegian School of Economics (NHH)",
+      no: "Norges Handelshøyskole (NHH)",
+    },
+    description: {
+      en: "Taking Investments, Corporate Finance, Decision Modelling in Business, and Business Cycle Analysis and Macroeconomic Policies.",
+      no: "Tar fagene Investments, Corporate Finance, Decision Modelling in Business og Business Cycle Analysis and Macroeconomic Policies.",
+    },
+  },
+  {
     date: "August 2023 – June 2027",
     title: {
       en: "B.Sc. Applied Mathematics",

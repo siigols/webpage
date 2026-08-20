@@ -5,8 +5,8 @@ export interface TimelineEvent {
   title: string;
   subtitle?: string;
   description?: React.ReactNode;
+  /** Longer content revealed inline via a "see more" toggle. */
+  details?: React.ReactNode;
   subItems?: TimelineEvent[];
-  seeMoreHref?: string;
-  seeMoreLabel?: string;
   alignRight?: boolean;
 }

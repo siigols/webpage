@@ -1,17 +1,14 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CursorGlow } from "./components/CursorGlow";
-import { ExperienceDetailPage } from "./pages/ExperienceDetailPage";
+import { ScrollProgress } from "./components/ScrollProgress";
 import { LandingPage } from "./pages/LandingPage";
 
 function App() {
   return (
-    <BrowserRouter basename="/webpage">
+    <>
+      <ScrollProgress />
       <CursorGlow />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/erfaring/:slug" element={<ExperienceDetailPage />} />
-      </Routes>
-    </BrowserRouter>
+      <LandingPage />
+    </>
   );
 }
 

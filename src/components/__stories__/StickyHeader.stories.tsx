@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PrimeReactProvider } from 'primereact/api';
-import { MemoryRouter } from 'react-router-dom';
 import { useRef } from 'react';
 import { StickyHeader } from '../StickyHeader';
 import { ThemeProvider } from '../../ThemeProvider';
@@ -15,9 +14,7 @@ const meta = {
       <PrimeReactProvider value={{ unstyled: true }}>
         <ThemeProvider>
           <LanguageProvider>
-            <MemoryRouter>
-              <Story />
-            </MemoryRouter>
+            <Story />
           </LanguageProvider>
         </ThemeProvider>
       </PrimeReactProvider>
@@ -30,17 +27,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-export const AlwaysVisible: Story = {
-  args: {
-    alwaysVisible: true,
-  },
-  render: (args) => (
-    <div style={{ minHeight: '50vh', paddingTop: '70px' }}>
-      <StickyHeader {...args} />
-    </div>
-  ),
-};
 
 function WithSentinelPreview() {
   const sentinelRef = useRef<HTMLDivElement>(null);

@@ -14,7 +14,7 @@ export function Icon({ name, size = 20, className, ...rest }: IconProps) {
       className={className}
       {...rest}
     >
-      <use href={`/icons.svg#${name}`} />
+      <use href={`${import.meta.env.BASE_URL}icons.svg#${name}`} />
     </svg>
   );
 }
