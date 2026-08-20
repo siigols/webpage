@@ -22,6 +22,9 @@ export type { ContactItemProps } from "./ContactItem";
 export { Timeline } from "./Timeline";
 export type { TimelineEvent } from "./Timeline";
 
+export { TimelineEventCard } from "./TimelineEventCard";
+export type { TimelineLabels } from "./TimelineEventCard";
+
 export { Header } from "./Header";
 export type { HeaderProps } from "./Header";
 
@@ -35,6 +38,8 @@ export { Spacer } from "./Spacer";
 export type { SpacerProps } from "./Spacer";
 
 export { CursorGlow } from "./CursorGlow";
+
+export { ScrollProgress } from "./ScrollProgress";
 
 export { StickyHeader } from "./StickyHeader";
 export type { StickyHeaderProps } from "./StickyHeader";

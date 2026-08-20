@@ -9,7 +9,6 @@ export interface ExperienceRole {
 }
 
 export interface ExperienceData {
-  slug: string;
   date: string;
   title: Bilingual;
   subtitle: string;
@@ -20,29 +19,61 @@ export interface ExperienceData {
 
 export const experience: ExperienceData[] = [
   {
-    slug: "sparebanken-norge",
     date: "June 2025 – {{present}}",
     title: { en: "System Developer", no: "Systemutvikler" },
     subtitle: "Sparebanken Norge",
     description: { en: "Part-time", no: "Deltid" },
     details: {
-      en: "Working on further development of the bank's digital services, including product development and development of a mobile bank for children, as well as improving the loan application process. Started as a summer intern in 2025, then received a part-time position alongside studies, and in 2026 took on a mentor role for new summer students.",
-      no: "Arbeidet har dreid seg om videreutvikling av bankens digitale tjenester, blant annet produktutvikling og utvikling av en mobilbank for barn, samt forbedring av lånesøknadsprosessen. Startet som sommerintern i 2025, fikk deretter tilbud om en deltidsstilling ved siden av studiene, og har i 2026 tatt på meg mentorrolle for nye sommerstudenter.",
+      en: "Working on further development of the bank's digital services, including product development and development of a mobile bank for children, as well as improving the loan application process. Started as a summer intern in 2025, then received a part-time position alongside studies, and in 2026 took on a lead role for the summer project and a mentor role for new summer students.",
+      no: "Arbeidet har dreid seg om videreutvikling av bankens digitale tjenester, blant annet produktutvikling og utvikling av en mobilbank for barn, samt forbedring av lånesøknadsprosessen. Startet som sommerintern i 2025, fikk deretter tilbud om en deltidsstilling ved siden av studiene, og har i 2026 tatt en ledende rolle for årets sommerprosjekt og mentorrolle for nye sommerstudenter.",
     },
+    roles: [
+      {
+        date: "June 2026 – {{present}}",
+        title: {
+          en: "Customer Overview — Summer Project 2026",
+          no: "Totaloversikt — Sommerprosjekt 2026",
+        },
+        details: {
+          en: "Developed a complete overview for the bank's customers, gathering and visualizing their full financial picture across internal and external data sources — family relations, shared accounts, homes and vehicles — in a user-friendly interface. Built with React/TypeScript and C#/.NET, now in beta testing with the bank's customers.",
+          no: "Utviklet en helhetlig totaloversikt for bankens kunder, som samlet og visualiserte kundens fulle økonomiske bilde på tvers av interne og eksterne datakilder, blant annet familierelasjoner, delte kontoer, boliger og kjøretøy. Bygget med React/TypeScript og C#/.NET, og er nå i beta-testing på bankens kunder.",
+        },
+      },
+      {
+        date: "January 2026 – May 2026",
+        title: {
+          en: "Meeting Booking Portal",
+          no: "Møtebookingsportal",
+        },
+        details: {
+          en: "Built a new portal where the bank's customers can book meetings with advisors themselves, integrated with the Dynamics API to sync directly with advisors' calendars so availability updates automatically. Built with React and C#/.NET.",
+          no: "Utviklet en ny møtebookingportal der bankens kunder selv kan booke møter med rådgivere. Integrert mot Dynamics API for å synkronisere direkte med rådgivernes kalendere, slik at ledig tid oppdateres automatisk. Bygget med React og C#/.NET.",
+        },
+      },
+      {
+        date: "May 2025 – {{present}}",
+        title: {
+          en: "Barnebank (Kids' Bank)",
+          no: "Barnebank",
+        },
+        details: {
+          en: "Built a dedicated web and mobile banking product for children, owning both frontend and backend — including the API, database, and integrations with external REST APIs. Implemented savings goals and weekly tasks to make saving and financial literacy more engaging for kids.",
+          no: "Utviklet en egen nett- og mobilbankløsning rettet mot barn, med ansvar for både frontend og backend. Satte opp eget API og database, samt integrasjoner mot eksterne REST-API-er. Implementerte funksjonalitet som sparemål og ukesoppgaver for å gjøre sparing og økonomiforståelse mer engasjerende for målgruppen.",
+        },
+      },
+    ],
   },
   {
-    slug: "pwc",
     date: "January 2026 – May 2026",
     title: { en: "Internship", no: "Internship" },
     subtitle: "PwC",
     description: { en: "Part-time", no: "Deltid" },
     details: {
-      en: "Internship connected to a course at UiB. Tasks involved designing and analyzing a market survey about AI in collaboration with a team.",
-      no: "Internship i tilknytning til emne på UIB. Arbeidsoppgavene innebar å utforme og analysere en markedsundersøkelse om AI i samarbeid med et team.",
+      en: "Internship connected to a course at UiB. Tasks involved designing and analyzing a market survey about Norwegian companies' AI adoption, and analyzing the responses in a Python Jupyter notebook to uncover patterns and trends together with a team.",
+      no: "Internship i tilknytning til emne på UIB. Arbeidsoppgavene innebar å utforme og analysere en markedsundersøkelse om norske bedrifters adopsjon av AI, og å analysere svarene i en Jupyter Notebook med Python for å avdekke mønstre og trender i samarbeid med et team.",
     },
   },
   {
-    slug: "uib",
     date: "August 2025 – November 2025",
     title: { en: "Teaching Assistant", no: "Undervisningsassistent" },
     subtitle: "Universitetet i Bergen (UiB)",
@@ -56,7 +87,6 @@ export const experience: ExperienceData[] = [
     },
   },
   {
-    slug: "avo-consulting",
     date: "January 2025 – May 2025",
     title: { en: "Internship", no: "Internship" },
     subtitle: "Avo Consulting",
@@ -70,7 +100,6 @@ export const experience: ExperienceData[] = [
     },
   },
   {
-    slug: "telenor",
     date: "November 2021 – March 2025",
     title: { en: "Assistant Store Manager", no: "Assisterende butikkleder" },
     subtitle: "Commbroker / Telenor",
@@ -81,7 +110,6 @@ export const experience: ExperienceData[] = [
     },
   },
   {
-    slug: "forsvaret",
     date: "August 2019 – July 2020",
     title: { en: "Military Service", no: "Førstegangstjeneste" },
     subtitle: "Forsvaret",
@@ -92,7 +120,6 @@ export const experience: ExperienceData[] = [
     },
   },
   {
-    slug: "finnfjord",
     date: "April 2018 – August 2021",
     title: { en: "Process Operator", no: "Prosessoperatør" },
     subtitle: "Finnfjord AS",

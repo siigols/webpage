@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import avatar from "../assets/portrettbilde-mini.png";
 import { headerData } from "../data/header";
 import { useLanguage } from "../useLanguage";
@@ -8,31 +7,20 @@ import { LanguageToggle } from "./LanguageToggle";
 import { ThemeToggle } from "./ThemeToggle";
 
 export interface StickyHeaderProps {
-  /** If true the bar is always visible (e.g. on detail pages). */
-  alwaysVisible?: boolean;
   /**
    * Sentinel element to observe. When it scrolls out of view the bar
-   * appears; when it's back in view the bar hides. Ignored when
-   * `alwaysVisible` is true.
+   * appears; when it's back in view the bar hides.
    */
   sentinelRef?: React.RefObject<HTMLDivElement | null>;
 }
 
-export function StickyHeader({
-  alwaysVisible = false,
-  sentinelRef,
-}: StickyHeaderProps) {
-  const [visible, setVisible] = useState(alwaysVisible);
+export function StickyHeader({ sentinelRef }: StickyHeaderProps) {
+  const [visible, setVisible] = useState(false);
   const { language } = useLanguage();
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   // IntersectionObserver – show bar when sentinel is NOT intersecting
   useEffect(() => {
-    if (alwaysVisible) {
-      setVisible(true);
-      return;
-    }
-
     const sentinel = sentinelRef?.current;
     if (!sentinel) return;
 
@@ -45,7 +33,7 @@ export function StickyHeader({
 
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [alwaysVisible, sentinelRef]);
+  }, [sentinelRef]);
 
   function handleCopy(value: string, index: number) {
     navigator.clipboard.writeText(value).then(() => {
@@ -63,8 +51,8 @@ export function StickyHeader({
       ].join(" ")}
     >
       {/* Left: avatar + name */}
-      <Link
-        to="/"
+      <a
+        href="#top"
         className="flex shrink-0 items-center gap-2 text-[var(--text-h)] no-underline"
       >
         <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--code-bg)]">
@@ -75,7 +63,7 @@ export function StickyHeader({
           />
         </div>
         <span className="text-sm font-medium">{headerData.name}</span>
-      </Link>
+      </a>
 
       {/* Spacer */}
       <div className="flex-1" />

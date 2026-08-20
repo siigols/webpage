@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import type { TimelineLabels } from "../components/TimelineEventCard";
+import { TimelineEventCard } from "../components/TimelineEventCard";
 import type { TimelineEvent } from "../components";
-import { Button, Card } from "../components";
 
 export const timelineMarker = () => (
   <span
@@ -9,59 +9,22 @@ export const timelineMarker = () => (
   />
 );
 
-export const timelineContent = (item: TimelineEvent) => (
-  <div className="flex flex-col gap-2">
-    <Card hover={false}>
-      <div className={`tl-card-content ${item.alignRight ? "text-right" : ""}`}>
-        <p className="mb-1 text-xs font-medium text-[var(--text)]">
-          {item.date}
-        </p>
-        <div
-          className={`${item.seeMoreHref ? `tl-see-more flex items-center justify-between gap-2 ${item.alignRight ? "flex-row-reverse" : ""}` : ""}`}
-        >
-          <p className="font-[var(--heading)] font-semibold text-[var(--text-h)]">
-            {item.title}
-          </p>
-          {item.seeMoreHref && (
-            <Link to={item.seeMoreHref}>
-              <Button variant="ghost" size="sm">
-                {item.seeMoreLabel ?? "See more"}
-              </Button>
-            </Link>
-          )}
-        </div>
-        {item.subtitle && (
-          <p className="text-sm text-[var(--accent)]">{item.subtitle}</p>
-        )}
-        {item.description && (
-          <div className="mt-2 text-sm text-[var(--text)]">
-            {item.description}
-          </div>
-        )}
+export function makeTimelineContent(labels: TimelineLabels) {
+  return function timelineContent(item: TimelineEvent) {
+    return (
+      <div className="flex flex-col gap-2">
+        <TimelineEventCard item={item} labels={labels} />
+        {item.subItems?.map((sub, i) => (
+          <TimelineEventCard
+            key={i}
+            item={{ ...sub, alignRight: item.alignRight }}
+            labels={labels}
+          />
+        ))}
       </div>
-    </Card>
-    {item.subItems?.map((sub, i) => (
-      <Card key={i} hover={false}>
-        <div className={`tl-card-content ${item.alignRight ? "text-right" : ""}`}>
-          <p className="mb-1 text-xs font-medium text-[var(--text)]">
-            {sub.date}
-          </p>
-          <p className="font-[var(--heading)] font-semibold text-[var(--text-h)]">
-            {sub.title}
-          </p>
-          {sub.subtitle && (
-            <p className="text-sm text-[var(--accent)]">{sub.subtitle}</p>
-          )}
-          {sub.description && (
-            <div className="mt-2 text-sm text-[var(--text)]">
-              {sub.description}
-            </div>
-          )}
-        </div>
-      </Card>
-    ))}
-  </div>
-);
+    );
+  };
+}
 
 /** Structural flex classes needed because PrimeReactProvider unstyled:true strips all built-in CSS. */
 export const timelinePt = {
