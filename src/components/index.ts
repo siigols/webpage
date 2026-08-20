@@ -43,3 +43,7 @@ export { ScrollProgress } from "./ScrollProgress";
 
 export { StickyHeader } from "./StickyHeader";
 export type { StickyHeaderProps } from "./StickyHeader";
+
+export { AuroraBackground } from "./AuroraBackground";
+
+export { SectionNav } from "./SectionNav";

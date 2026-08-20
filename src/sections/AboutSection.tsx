@@ -8,7 +8,7 @@ export function AboutSection() {
   const tr = t(language);
 
   return (
-    <Section title={tr.sections.about} id="about">
+    <Section title={tr.sections.about} id="about" index={1}>
       <div className="mx-auto max-w-2xl text-left">
         <p className="text-[var(--text)]" data-stagger="0">
           {bio[language]}

@@ -1,6 +1,11 @@
 import { animate, stagger } from "animejs";
 import { animated } from "@react-spring/web";
-import { motion } from "motion/react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { useEffect, useRef } from "react";
 import { useTilt } from "../useTilt";
 
@@ -50,6 +55,9 @@ export function Header({
 }: HeaderProps) {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const tilt = useTilt({ max: 14, scale: 1.08 });
+  const reduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const cueOpacity = useTransform(scrollY, [0, 150], [1, 0]);
 
   // One-time character-by-character reveal of the name, driven by anime.js.
   useEffect(() => {
@@ -142,6 +150,37 @@ export function Header({
             {children}
           </motion.div>
         )}
+      </motion.div>
+
+      {/* Scroll cue: bounces gently, fades out as the page is scrolled */}
+      <motion.div
+        aria-hidden="true"
+        className="mt-10 text-[var(--text)]"
+        style={{ opacity: cueOpacity }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: reduceMotion ? 0 : [0, 8, 0] }}
+        transition={{
+          opacity: { delay: trailDelay + 0.3, duration: 0.6 },
+          y: {
+            delay: trailDelay + 0.3,
+            duration: 1.6,
+            repeat: reduceMotion ? 0 : Infinity,
+            ease: "easeInOut",
+          },
+        }}
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M4 7l6 6 6-6" />
+        </svg>
       </motion.div>
     </header>
   );

@@ -57,6 +57,7 @@ export function ProjectsSection() {
       title={tr.sections.projects}
       description={projectsDescription[language]}
       id="projects"
+      index={4}
     >
       <div className="grid gap-4 text-left md:grid-cols-2">
         {projects.map((project, index) => (

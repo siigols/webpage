@@ -4,7 +4,7 @@ import type { TimelineEvent } from "../components";
 
 export const timelineMarker = () => (
   <span
-    className="flex h-2.5 w-2.5 rounded-full border-2 border-[var(--accent)] bg-[var(--bg)]"
+    className="tl-marker flex h-2.5 w-2.5 rounded-full border-2 border-[var(--accent)] bg-[var(--bg)]"
     aria-hidden="true"
   />
 );

@@ -17,6 +17,18 @@ type CardAsAnchor = CardBaseProps &
 
 export type CardProps = CardAsDiv | CardAsAnchor;
 
+function handleSpotlightMove(e: React.MouseEvent<HTMLElement>) {
+  const rect = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty(
+    '--spot-x',
+    `${((e.clientX - rect.left) / rect.width) * 100}%`,
+  );
+  e.currentTarget.style.setProperty(
+    '--spot-y',
+    `${((e.clientY - rect.top) / rect.height) * 100}%`,
+  );
+}
+
 export function Card({
   children,
   className,
@@ -25,17 +37,19 @@ export function Card({
 }: CardProps) {
   const classes = [
     'block rounded-lg border border-[var(--border)] bg-transparent p-4 md:p-6 transition-all duration-300 ease-out',
-    hover && 'hover:-translate-y-1 hover:shadow-[var(--shadow)] hover:border-[var(--accent-border)]',
+    hover && 'spotlight-card hover:-translate-y-1 hover:shadow-[var(--shadow)] hover:border-[var(--accent-border)]',
     'href' in rest && rest.href != null && 'cursor-pointer',
     className,
   ]
     .filter(Boolean)
     .join(' ');
 
+  const spotlightHandlers = hover ? { onMouseMove: handleSpotlightMove } : {};
+
   if ('href' in rest && rest.href != null) {
     const { href, ...anchorRest } = rest as CardAsAnchor;
     return (
-      <a href={href} className={classes} {...anchorRest}>
+      <a href={href} className={classes} {...spotlightHandlers} {...anchorRest}>
         {children}
       </a>
     );
@@ -43,7 +57,7 @@ export function Card({
 
   const divRest = rest as Omit<CardAsDiv, keyof CardBaseProps>;
   return (
-    <div className={classes} {...divRest}>
+    <div className={classes} {...spotlightHandlers} {...divRest}>
       {children}
     </div>
   );
