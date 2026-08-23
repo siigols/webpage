@@ -8,14 +8,16 @@ export function SkillsSection() {
   const tr = t(language);
 
   return (
-    <Section title={tr.sections.skills}>
+    <Section title={tr.sections.skills} id="skills" index={8}>
       <Spacer />
-      <div className="flex flex-wrap gap-2 text-left">
-        {skills.map((skill, index) => (
-          <Badge key={skill} variant="default" data-stagger-deep={index}>
-            {skill}
-          </Badge>
-        ))}
+      <div className="marquee">
+        <div className="marquee-track">
+          {[...skills, ...skills].map((skill, index) => (
+            <Badge key={`${skill}-${index}`} variant="default">
+              {skill}
+            </Badge>
+          ))}
+        </div>
       </div>
     </Section>
   );

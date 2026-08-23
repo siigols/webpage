@@ -8,7 +8,7 @@ export function HobbiesSection() {
   const tr = t(language);
 
   return (
-    <Section title={tr.sections.hobbies}>
+    <Section title={tr.sections.hobbies} id="hobbies" index={6}>
       <div className="grid gap-4 text-left md:grid-cols-3">
         {hobbies.map((hobby, index) => (
           <Card key={hobby.title.en} data-stagger={index}>

@@ -19,7 +19,7 @@ export function EducationSection() {
   }));
 
   return (
-    <Section title={tr.sections.education}>
+    <Section title={tr.sections.education} id="education" index={3}>
       <Timeline
         value={events}
         align="alternate"

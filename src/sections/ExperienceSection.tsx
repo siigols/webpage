@@ -30,7 +30,7 @@ export function ExperienceSection() {
   }));
 
   return (
-    <Section title={tr.sections.experience} id="experience">
+    <Section title={tr.sections.experience} id="experience" index={2}>
       <Timeline
         value={events}
         content={makeTimelineContent({

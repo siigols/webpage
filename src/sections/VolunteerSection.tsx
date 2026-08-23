@@ -19,7 +19,7 @@ export function VolunteerSection() {
   }));
 
   return (
-    <Section title={tr.sections.volunteer}>
+    <Section title={tr.sections.volunteer} id="volunteer" index={5}>
       <Timeline
         value={events}
         content={makeTimelineContent({
